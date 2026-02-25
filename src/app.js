@@ -12,7 +12,7 @@ const { expressCorsOptions } = require('./utils/cors');
 const app = express();
 
 app.use(cors(expressCorsOptions));
-app.options('*', cors(expressCorsOptions));
+app.options(/.*/, cors(expressCorsOptions));
 app.use(express.json());
 app.use(morgan('dev'));
 
